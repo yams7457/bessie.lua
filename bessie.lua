@@ -1,3 +1,13 @@
+-- connect midi keyboard
+-- play a chord
+-- dim, 7, M7, M6, -6, 7b5, 
+-- minMaj7, or M7#5
+--
+-- if bessie doesn't know one
+-- try another
+-- bessie will suggest a chord
+
+
 m = midi.connect()
 
 m.event = function(data)   
@@ -150,7 +160,7 @@ for i = 0, 11 do
     for k = 0, 11 do
       chord_table[i][j][k] = {}
       for l = 0, 11 do
-        chord_table[i][j][k][l] = 1
+        chord_table[i][j][k][l] = "Unknown"
       end
     end
   end
