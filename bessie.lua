@@ -24,7 +24,7 @@ m.event = function(data)
     for k,v in spairs(played_notes, function(t,a,b) return t[b] > t[a] end) do
       bottom_to_top[k] = v
     end
-    if #played_notes >= 4 then
+    if #played_notes == 4 then
       tell_me_what_i_played()
     end
   end
@@ -313,7 +313,7 @@ function calculate_a_new_chord()
             for m,v in spairs(new_chord_choices[i][j][k][l], function(t,a,b) return t[b] > t[a] end) do
                new_chord_choices[i][j][k][l][m] = v
             end
-            if chord_table[new_chord_choices[i][j][k][l][1]][new_chord_choices[i][j][k][l][2]][new_chord_choices[i][j][k][l][3]][new_chord_choices[i][j][k][l][4]] ~= 1 then
+            if chord_table[new_chord_choices[i][j][k][l][1]][new_chord_choices[i][j][k][l][2]][new_chord_choices[i][j][k][l][3]][new_chord_choices[i][j][k][l][4]] ~= "Unknown" then
               table.insert(limited_chord_choices, chord_table[new_chord_choices[i][j][k][l][1]][new_chord_choices[i][j][k][l][2]][new_chord_choices[i][j][k][l][3]][new_chord_choices[i][j][k][l][4]])
             end
         end
